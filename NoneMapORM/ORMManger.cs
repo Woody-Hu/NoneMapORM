@@ -124,6 +124,7 @@ namespace NoneMapORM
             try
             {
                 m_useSessionFactory.Close();
+                m_useSessionFactory.Dispose();
             }
             catch (Exception)
             {
@@ -162,6 +163,7 @@ namespace NoneMapORM
                     //关闭事务
                     FinishTransaction(ifRollBack);
                     m_currentSession.Close();
+                    m_currentSession.Dispose();
                 }
                 catch (Exception)
                 {
