@@ -69,6 +69,7 @@ namespace NoneMapORM
             //绑定Id
             //设定为自增主键
             inputValue.Id(k => k.Id,map=>map.Generator(Generators.Identity));
+            inputValue.EntityName(typeof(X).Name);
 
             Type useType = typeof(X);
 
